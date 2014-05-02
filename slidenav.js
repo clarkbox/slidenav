@@ -46,6 +46,7 @@ define(['jquery', 'jquery.ui.widget', 'jquery.ui.position'], function($){
             var ul = selected.closest('ul'),
                 navData = ul.data('slidenav'),
                 selectedIndex = selected.data("index");
+            selected.find('a').addClass('slideNavActiveParent');
             selected = navData[this.options.childPropertyName][selectedIndex];
             if(selected[this.options.childPropertyName] && selected[this.options.childPropertyName].length > 0){
                 if(event){
@@ -74,6 +75,7 @@ define(['jquery', 'jquery.ui.widget', 'jquery.ui.position'], function($){
             }
             var $hide = this._chain.pop(),
                 to = this._chain[this._chain.length-1];
+            to.find('.slideNavActiveParent').removeClass('slideNavActiveParent').focus();
             this.slide(to, function(){
                 $hide.scrollTop(0).hide();
                 to.find('a').prop('tabindex', '0');
