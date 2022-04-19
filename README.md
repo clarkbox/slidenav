@@ -1,4 +1,4 @@
 slidenav
 ========
 
-hierarchical DHTML list navigation that slides
+hierarchical jQuery DHTML list navigation that slides
